@@ -1,0 +1,216 @@
+#tree-holder { 
+  #tree-content-holder {
+    float:left;
+    width:100%;
+  }
+  #tree-readme-holder {
+    float:left;
+    width:100%;
+    .readme {
+      @include round-borders-all(4px);
+      padding:4px 15px;
+      background: #F7F7F7;
+    }
+  }
+
+  .tree_progress { 
+    display:none;
+    margin:20px;
+    &.loading { 
+      display:block;
+    }
+  }
+
+
+  /** FILE CONTENT VIEW **/
+  .view_file_content{
+    .old_line, .new_line {
+      background:#ECECEC;
+      color:#777;
+      width:15px;
+      float:left;
+      padding: 0px 10px;
+      border-right: 1px solid #ccc;
+    }
+    .old_line{
+      display:none;
+    }
+  }
+
+  .view_file .view_file_header,
+  .diff_file .diff_file_header {
+    border-bottom: 1px solid #bbb;
+    background:#eee;
+    background-image: -webkit-gradient(linear, 0 0, 0 30, color-stop(0.066, #eee), to(#dfdfdf));
+    background-image: -webkit-linear-gradient(#eee 6.6%, #dfdfdf);
+    background-image: -moz-linear-gradient(#eee 6.6%, #dfdfdf);
+    background-image: -o-linear-gradient(#eee 6.6%, #dfdfdf);
+    margin: 0;
+    font-weight: normal;
+    font-weight: bold;
+    text-align: left;
+    color: #666;
+    padding: 9px 10px;
+    height:18px;
+
+    .mode_text,
+    .file_icon { 
+      color:#777;
+    }
+
+    .file_name { 
+      color:#474D57;
+      text-shadow: 0 1px 1px #fff;
+    }
+  }
+
+  .view_file {
+    border:1px solid #CCC;
+    margin-bottom:1em;
+
+    .view_file_content {
+      background:#fff;
+      color:#514721;
+      font-size: 11px;
+    }
+    .view_file_content_image {
+      background:#eee;
+      text-align:center;
+      img {
+        padding:100px;
+        max-width:300px;
+      }
+    }
+  }
+
+  td.code {
+    width: 100%;
+    .highlight {
+      margin-left: 55px;
+      overflow:auto;
+      overflow-y:hidden;
+    }
+  }
+  .highlight pre {
+    white-space: pre;
+    word-wrap:normal;
+  }
+
+  table.highlighttable {
+    border: none;
+  }
+  body.project-page table.highlighttable td { border: none }
+  table.highlighttable tr:hover { background:none;}
+
+  table.highlighttable pre{
+    line-height:16px !important;
+    font-size:12px !important;
+  }
+
+  table.highlighttable .linenodiv pre {
+    text-align: right;
+    padding-right: 4px;
+    color:#888;
+  }
+
+  #tree-slider {
+    .tree-item { 
+      &:hover { 
+        td { background: $hover; }
+        cursor:pointer;
+      }
+    }
+  }
+
+  .tree-item { 
+    .tree-item-file-name { 
+      vertical-align:middle;
+      font-weight:bold;
+      a { 
+        color:$style_color;
+        &:hover { 
+          color:$blue_link;
+        }
+      }
+
+      img { 
+        position: relative;
+        top:-1px;
+      }
+    }
+  }
+
+  ul.breadcrumb {
+    background:white;
+    border:none;
+    li {
+      display: inline;
+      text-shadow: 0 1px 0 white
+    }
+
+    a { 
+      color:#474D57;
+      font-weight:bold;
+      font-size:14px;
+    }
+  }
+
+  #tree-slider { 
+    @include shade;
+    width:100%;
+
+    border-color:#ccc;
+
+    td { 
+      padding:8px;
+      border-color:#f1f1f1;
+      background:#fafafa;
+    }
+
+    tr:first-child td:first-child, 
+    tr:first-child td:last-child { 
+      border-radius:0;
+    }
+
+    th { 
+      border-color: #CCC;
+      border-bottom: 1px solid #bbb;
+      background:#eee;
+      background-image: -webkit-gradient(linear, 0 0, 0 30, color-stop(0.066, #eee), to(#dfdfdf));
+      background-image: -webkit-linear-gradient(#eee 6.6%, #dfdfdf);
+      background-image: -moz-linear-gradient(#eee 6.6%, #dfdfdf);
+      background-image: -o-linear-gradient(#eee 6.6%, #dfdfdf);
+    }
+  }
+
+  .tree-commit-link { 
+    color:#333;
+  }
+
+  #tree-content-holder .view_file{ 
+    @include shade;
+  }
+
+  #tree-readme-holder .readme { 
+    @include shade;
+    margin-bottom:20px;
+  }
+
+  a.tree-commit-link { 
+    color: #666;
+    &:hover { 
+      text-decoration: underline;
+    }
+  }
+
+  .arrow { 
+    background: url("images.png") no-repeat -85px -77px;
+    width: 19px;
+    height: 16px;
+    float: left;
+    position: relative;
+    left: -10px;
+    padding:0;
+    margin:0;
+  }
+}

@@ -1,0 +1,6 @@
+= render "branches_head"
+
+%table.zebra-striped.borders
+  - @activities.each do |update|
+    = render "repositories/branch", :branch => update.head
+

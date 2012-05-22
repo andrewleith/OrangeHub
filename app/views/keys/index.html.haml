@@ -1,0 +1,9 @@
+%h3 
+  SSH Keys
+  = link_to "Add new", new_key_path, :class => "btn small right"
+  
+%br
+
+%table#keys-table.table
+  - @keys.each do |key|
+    = render(:partial => 'show', :locals => {:key => key})

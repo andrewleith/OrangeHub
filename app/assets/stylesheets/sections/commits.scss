@@ -1,0 +1,54 @@
+.commit-box {
+  @extend .main_box;
+
+  .commit-head { 
+    @extend .top_box_content;
+
+    .commit-title {
+      line-height: 26px;
+      margin:0;
+    }
+
+    .commit-description {
+      font-size: 14px;
+      border: none;
+      background-color: white;
+      padding-top:10px;
+    }
+
+    .browse-button {
+      @extend .btn;
+      @extend .btn-small;
+      float: right;
+    }
+  }
+
+  .commit-info {
+    @extend .middle_box_content;
+    @extend .clearfix;
+
+    .sha-block {
+      text-align:right;
+      &:first-child { 
+        padding-bottom:6px;
+      }
+
+      a { 
+        border-bottom: 1px solid #aaa;
+        margin-left: 9px;
+      }
+    }
+
+    &.merge-commit .sha-block {
+      clear: right;
+    }
+
+    .committer {
+      padding-left: 32px;
+    }
+
+    .avatar {
+      margin-right: 10px;
+    }
+  }
+}

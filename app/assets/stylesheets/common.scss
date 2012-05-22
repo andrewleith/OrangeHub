@@ -1,0 +1,935 @@
+.diff_file_header a,
+.file_stats a {
+  color:$style_color;
+}
+
+
+/** LAYOUT **/
+
+.container { 
+  padding-top:0;
+  z-index:5;
+}
+
+.container .content { 
+  margin:0 0;
+}
+
+.container  .sidebar { 
+  width: 200px;
+  height:100%;
+  min-height:450px;
+  float:right;
+}
+
+/**
+ * Common header style
+ * 
+ */
+header { 
+  /* Account box */
+  .account-box {
+    position: absolute;
+    right: 0;
+    top: 13px;
+    z-index: 10000;
+    width: 128px;
+    font-size: 11px;
+    float: right;
+    display: block;
+    cursor: pointer;
+    img {
+      border-radius: 4px;
+      right: 0px;
+      position: absolute;
+      width: 33px;
+      height: 33px;
+      display: block;
+      top: 0;
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        float: right;
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 0;
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.15)), to(rgba(0, 0, 0, 0.25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)));
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+        background: linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+        -webkit-background-origin: border-box;
+        -moz-background-origin: border;
+  background-origin: border-box; } } }
+
+  .account-box {
+    &.hover {
+    height: 138px; }
+    &:hover > .account-links {
+  display: block; } }
+
+  .account-links {
+    background: #79C3E0;
+    display: none;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 0;
+    float: right;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    &:before {
+      content: ".";
+      width: 0;
+      height: 0;
+      position: absolute;
+      border: 5px solid transparent;
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #333;
+      text-indent: -9999px;
+      top: -10px;
+      line-height: 0;
+      right: 10px;
+    z-index: 10; }
+    background: #333;
+    display: none;
+    z-index: 100000;
+    border-radius: 5px;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    top: 46px;
+    margin-top: 0;
+    float: right;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    a {
+      color: #EEE;
+      padding: 6px 10px;
+      display: block;
+      text-shadow: none;
+      border-bottom: 1px solid #555;
+      &:hover {
+        color:#eee;
+        background: #444;
+      }
+    }
+  }
+
+  .account-box.hover .arrow-up {
+    top: 41px;
+    right: 6px;
+    position: absolute; }
+
+  .account-links a {
+    &:first-child {
+      -webkit-border-top-left-radius: 5px;
+      -webkit-border-top-right-radius: 5px;
+      -moz-border-radius-topleft: 5px;
+      -moz-border-radius-topright: 5px;
+      border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+    &:last-child {
+      -webkit-border-bottom-right-radius: 5px;
+      -webkit-border-bottom-left-radius: 5px;
+      -moz-border-radius-bottomright: 5px;
+      -moz-border-radius-bottomleft: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+  border-bottom: 0; } }
+}
+
+/*
+ *  Main Menu of Application
+ *
+ */
+nav.main_menu { 
+  border-radius: 4px;
+  margin: auto;
+  margin:30px 0;
+  background:#eee;
+  border:1px solid #bbb;
+  height:38px;
+  background-image: -webkit-gradient(linear, 0 0, 0 30, color-stop(0.066, #eee), to(#dfdfdf));
+  background-image: -webkit-linear-gradient(#eee 6.6%, #dfdfdf);
+  background-image: -moz-linear-gradient(#eee 6.6%, #dfdfdf);
+  background-image: -o-linear-gradient(#eee 6.6%, #dfdfdf);
+  @include shade;
+  .count { 
+    position: relative;
+	  top: -1px;
+	  display: inline-block;
+	  height: 15px;
+	  margin: 0 0 0 5px;
+	  padding: 0 8px 1px 8px;
+	  height: auto;
+	  font-size: 0.82em;
+	  line-height: 14px;
+	  text-align: center;
+	  color: #777;
+	  background: #f2f2f2;
+	  border-top: 1px solid #CCC;
+	  border-radius: 8px;
+	 -moz-border-radius: 8px;
+  }
+  .label { 
+    background:$hover;
+    text-shadow:none;
+    color:$style_color;
+  }
+  a { 
+    // Landscape phone to portrait tablet
+    @media (max-width: 1080px) { min-width:35px; }
+    // Portrait tablet to landscape and desktop
+    @media (min-width: 1080px) and (max-width: 1200px) { min-width:40px; }
+    // Large desktop
+    @media (min-width: 1200px) { min-width:55px; }
+
+    text-align:center;
+    font-weight:bold;
+    &:first-child{ 
+      -webkit-border-top-left-radius: 4px;
+      -webkit-border-bottom-left-radius: 4px;
+      -moz-border-radius-topleft: 4px;
+      -moz-border-radius-bottomleft: 4px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    padding: 10px 25px;
+    display: inline-block;
+    color: $style_color;
+    position: relative;
+    margin: 0;
+    float:left;
+    text-shadow:0 1px 1px white;
+    &.home { 
+      background: url(home_icon.PNG) no-repeat center center;
+      text-indent:-9999px;
+      //min-width:40px;
+      img { 
+        position:relative;
+        top:4px;
+      }
+    }
+    &.current { 
+      background-color:#D5D5D5;
+      border-bottom: 2px solid #474D57;
+      &:first-child{ 
+        border-bottom:none;
+      }
+    }
+  }
+}
+/*
+ *  End of Main Menu
+ *
+ */
+
+.profile_avatar_holder { 
+  float:left;
+  width:60px;
+  height:60px;
+  margin-right:20px;
+  img { 
+    width:60px;
+    height:60px;
+    background:#eee;
+  }
+}
+
+
+.visible_link,
+.author_link { 
+  color: $link_color;
+}
+
+.widget { 
+  @include shade;
+  padding:20px;
+  margin-bottom:20px;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  background:#fafafa;
+
+  .link_holder { 
+    background:#eee;
+    position:relative;
+    left:-20px;
+    top:20px;
+    padding:10px 20px;
+    width:100%;
+    border-top:1px solid #ccc;
+
+    a { 
+      font-size:14px;
+      color:#666;
+    }
+  }
+}
+
+.help li { color:#111 } 
+
+.back_link { 
+  text-decoration:underline;
+  font-size:14px;
+  font-weight:bold;
+  padding:10px 0;
+  padding-bottom:0;
+}
+
+.info_link { 
+  margin-right:5px;
+  float:left;
+
+  img { 
+    width:20px;
+  }
+}
+
+.download_repo_link { 
+  background: url("images.png") no-repeat 0 -48px;
+  padding-left:20px;
+}
+
+.number { 
+  border-radius: 4px; 
+  text-shadow: none; 
+  background: rgba(0,0,0,.12); 
+  text-align: center; 
+  padding: 2px 4px; 
+  line-height:18px;
+  margin-left:2px;
+}
+
+table a code { 
+  position: relative;
+  top: -2px;
+  margin-right: 3px;
+}
+
+.span12 hr{
+ margin-top: 5px;
+}
+
+.btn.padded { 
+  margin-right:3px;
+  padding:4px 10px 4px;
+}
+
+.loading { 
+  margin:20px auto;
+  background: url(ajax_loader.gif) no-repeat center center;
+  width:40px;
+  height:40px;
+}
+
+/** FLASH message **/
+#flash_container {
+  height:50px;
+  position:fixed;
+  z-index:10001;
+  top:0px;
+  width:100%;
+  margin-bottom:15px;
+  overflow:hidden;
+  background:white;
+  cursor:pointer;
+  border-bottom:1px solid #ccc;
+
+  h4 {
+    color:#444;
+    font-size:22px;
+    padding-top:5px;
+    margin:2px;
+  }
+}
+
+.git_url_wrapper {
+  margin-right:50px
+}
+.file_stats {
+  span {
+    img {
+      width:14px;
+      float:left;
+      margin-right:6px;
+      padding:2px 0;
+    }
+  }
+}
+
+.handle:hover {
+  cursor:move;
+}
+
+span.update-author {
+  display:block;
+}
+span.update-author {
+  color:#999;
+  font-weight:normal;
+  font-style:italic;
+}
+span.update-author strong {
+  font-weight:bold;
+  font-style: normal;
+}
+
+/** UPDATE ITEM **/
+span.update-author {
+  display:block;
+}
+/** END UPDATE ITEM **/
+.ajax-tab-loading {
+  padding:40px;
+  display:none;
+}
+.dashboard-loader {
+  float:left;
+  margin:10px;
+  display:none;
+}
+.user-mention {
+  color:#2FA0BB;
+  font-weight:bold;
+}
+
+a.project-update.titled {
+  position:relative;
+  padding-left:35% !important;
+  .title-block {
+    padding:10px;
+    width:35%;
+    position:absolute;
+    left:0;
+    top:0;
+  }
+}
+/**
+ * Project graph
+ */
+#holder {
+  cursor: move;
+  height: 70%;
+  overflow: hidden;
+}
+
+
+
+input.git_clone_url { 
+  width:325px;
+}
+
+.merge-request-form-holder {
+  select { 
+    width:300px;
+  }
+}
+
+/** Issues **/
+#issue_assignee_id {
+  width:300px;
+}
+
+#new_issue_dialog textarea{
+    height: 100px;
+}
+
+.project_list_url { 
+  width:250px;
+  background:#fff !important;
+}
+
+/**
+ * 
+ * COMMIT SHOw
+ *
+ */
+.diff_file {
+  border:1px solid #CCC;
+  margin-bottom:1em;
+
+  .diff_file_header {
+    padding:5px 5px;
+    border-bottom:1px solid #CCC;
+    background: #eee;
+  }
+  .diff_file_content {
+    overflow:auto;
+    overflow-y:hidden;
+    background:#fff;
+    color:#333;
+    font-size: 12px;
+    font-family: 'Menlo', 'Courier New', 'andale mono','lucida console',monospace;
+  }
+  .diff_file_content_image {
+    background:#eee;
+    text-align:center;
+    img {
+      padding:50px;
+      max-width:400px;
+    }
+  }
+}
+
+.diff_file_content{
+  table { 
+    border:none;
+    margin:0px;
+    padding:0px;
+    tr {
+      td { 
+        font-size:12px;
+      }
+    }
+  }
+  .old_line, .new_line {
+    margin:0px;
+    padding:0px;
+    border:none;
+    background:#F7F7F7;
+    color:#aaa;
+    padding: 0px 5px;
+    border-right: 1px solid #ccc;
+    text-align:right;
+    min-width:35px;
+    max-width:35px;
+    width:35px;
+    moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    a { 
+      float:left;
+      width:35px;
+      font-weight:normal;
+      color:#aaa;
+      &:hover { 
+        text-decoration:underline;
+      }
+    }
+  }
+  .line_content { 
+    white-space:pre; 
+    height:14px;
+    margin:0px;
+    padding:0px;
+    border:none;
+    &.new { 
+      background: #CFD;
+    }
+    &.old { 
+      background: #FDD;
+    }
+    &.matched { 
+      color:#ccc;
+      background:#fafafa;
+    }
+  }
+}
+
+/** COMMIT BLOCK **/
+.commit-title{display: block;}
+.commit-title{margin-bottom: 10px}
+.commit-author, .commit-committer{display: block;color: #999; font-weight: normal; font-style: italic;}
+.commit-author strong, .commit-committer strong{font-weight: bold; font-style: normal;}
+
+/** bordered list **/
+ul.bordered-list { 
+  margin:5px 0px;
+  padding:0px;
+  li { 
+    padding: 5px 0;
+    border-bottom: 1px solid #EEE;
+    overflow: hidden;
+    display: block;
+    margin:0px;
+  }
+}
+
+ul.bordered-list li:last-child { border:none } 
+
+.line_holder { 
+  &:hover { 
+    td { 
+      background: #FFFFCF !important;
+    }
+  }
+}
+
+li.commit { 
+  .avatar { 
+    width:24px;
+    top:-3px;
+    margin-right:10px;
+    margin-left:10px;
+  }
+
+  code { 
+    padding:0px;
+  }
+}
+p.time {
+  color: #999;
+  font-size: 90%;
+  margin: 30px 3px 3px 2px;
+}
+
+
+/** 
+ * Dashboard page
+ * 
+ */
+.dashboard_category { 
+  margin-bottom:30px;
+  h3 a { 
+    color:#474D57;
+    &:hover { 
+      text-decoration:underline;
+    }
+  }
+
+  .dashboard_block { 
+    .dash_project_item { 
+      margin-bottom:10px;
+      border:none;
+      padding:0px 5px;
+      .project_link {
+        color:#888;
+        &:hover {
+          color:#111;
+          .ico.project { 
+            background-position:-209px -21px;
+          }
+        }
+      }
+      h4 {
+        color:#666;
+      }
+    }
+  }
+}
+
+.styled_image { 
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+}
+
+.event_feed { 
+  min-height:40px;
+  border-bottom:1px solid #ddd;
+  .avatar { 
+    width:32px;
+  }
+  ul { 
+    margin-left:50px;
+    margin-bottom:5px;
+    .avatar { 
+      width:24px;
+    }
+  }
+
+  padding: 15px 5px;
+  &:last-child { border:none }
+  .wll:hover { background:none }
+}
+
+.ico { 
+  background: url("images.png") no-repeat -85px -77px;
+  width: 19px;
+  height: 16px;
+  float: left;
+  position: relative;
+  margin-right: 10px;
+  top: 8px;
+
+  &.project { 
+    background-position:  -37px -77px;
+  }
+
+  &.activities { 
+    background-position:-162px -22px;
+  }
+  &.projects { 
+    background-position:-209px -21px;
+  }
+}
+
+.leftbar { 
+  h5, .title { 
+    padding:5px 10px;
+  }
+
+  h4 { 
+    font-size:14px;
+    padding:2px 10px;
+    color:#888;
+    border-bottom:1px solid #eee;
+  }
+  a:last-child h4 { border:none; }
+
+  a:hover { 
+    h4 {
+      color:#111;
+      background:$hover;
+      .ico.project { 
+        background-position:-209px -21px;
+      }
+    }
+  }
+  .bottom { 
+    padding:10px;
+  }
+}
+
+.btn { 
+  &.very_small { 
+    font-size:11px;
+    padding:2px 6px;
+    margin:2px;
+  }
+}
+
+.mr_source_commit , 
+.mr_target_commit { 
+  .commit { 
+    list-style:none;
+    margin-top:10px;
+    &:hover { 
+      background:none;
+    }
+  }
+}
+
+.prettyprint { 
+  background-color: #fefbf3;
+  padding: 9px;
+  border: 1px solid rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+.hint {
+  font-style: italic;
+  color: #999;
+}
+
+.upvotes {
+  font-size: 14px;
+  font-weight: bold;
+  color: #468847;
+  text-align: right;
+  padding: 4px;
+  margin: 2px;
+}
+
+/* Fix for readme code (stopped it from being yellow) */
+.readme {
+  pre {
+    background: white !important;
+    
+    code {
+      background: none !important;
+    }
+  }
+}
+
+/**
+ *  UI box element 
+ *  contains top, middle, bottom blocks
+ * 
+ */
+.main_box { 
+  @extend .borders;
+  @extend .prepend-top-20;
+  @extend .append-bottom-20;
+  border-width:1px;
+
+  img { max-width: 100%; }
+
+  pre {
+    code {
+      background: none !important;
+    }
+  }
+
+  .top_box_content, 
+  .middle_box_content, 
+  .bottom_box_content { 
+    padding:15px;
+
+    pre {
+      background: none !important;
+      margin:0;
+      border:none;
+      padding:0;
+    }
+  }
+
+  .middle_box_content { 
+    border-radius:0;
+    border:none;
+    font-size:12px;
+    background-color:#f5f5f5;
+    border:none;
+    border-top:1px solid #eee;
+  }
+
+  .bottom_box_content { 
+    border-top:1px solid #eee;
+  }
+}
+
+.highlight_word { 
+  background:#EEDC94;
+}
+
+.status_info { 
+  font-size:14px;
+  padding:5px 15px;
+  line-height:24px;
+  width:60px;
+  text-align:center;
+  float:left;
+  margin-right:20px;
+}
+
+.arrow{ 
+  background: #E3E5EA;
+  padding: 5px;
+  margin-top:5px;
+  border-radius: 5px;
+  text-shadow: none;
+  color: #999;
+  line-height: 16px;
+  font-weight:bold;
+}
+
+.thin_area{
+  height: 150px;
+}
+
+.gitlab_pagination { 
+  span a { color:$link_color; }
+  .prev, .next, .current, .page a { 
+    padding:10px;
+  }
+  .current { 
+    border-bottom:2px solid $style_color;
+  }
+}
+
+// Fixes alignment on notes.
+.new_note {
+  label {
+    text-align:left;
+  }
+}
+
+.new_note {
+  .input-file {
+    font: 500px monospace;
+    opacity:0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    z-index: 1;
+    top:0;
+    right:0;
+    padding:0;
+    margin: 0;
+  }
+
+  .file_upload {
+    position: absolute;
+    right:14px;
+    top:7px;
+  }
+
+  div.attachments {
+    position:relative;
+    width: 350px;
+    height: 36px;
+    overflow:hidden;
+    margin:0 0 5px !important;
+  }
+  .file_name {
+    line-height:30px;
+    width:240px;
+    height:28px;
+    overflow:hidden;
+  }
+}
+
+// Fix issue with notes & lists creating a bunch of bottom borders.
+li.note {
+  img { max-width:100% }
+  .note-title {
+    li {
+      border-bottom:none !important;
+    }
+    .file {
+      padding-left:20px;
+      background:url("icon-attachment.png") no-repeat left center;
+    }
+  }
+}
+
+.markdown { 
+  img { 
+    max-width:100%;
+  }
+}
+
+.wiki_content code, .readme code{
+  background-color: inherit;
+}
+
+.team_member_show { 
+  td:first-child { 
+    color:#aaa;
+  }
+}
+
+.remember_me { 
+  text-align:left;
+
+  input { 
+    margin:0;
+  }
+
+  span { 
+    padding-left:5px;
+  }
+}
+
+
+/**
+ * Milestones list
+ *
+ */
+
+.milestone { 
+  @extend .wll;
+}
+
+/**
+ * Admin area
+ *
+ */
+.admin_dash { 
+  .data { 
+    a { 
+      h1 { 
+        line-height:48px;
+        font-size:48px;
+        padding:20px;
+        text-align:center;
+      }
+    }
+  }
+}
